@@ -16,7 +16,7 @@
 * Run the game to check it works and when you win it uses your name
 * Instructions to Commit
     * We now want to commit the changes to GitLab
-    * See git commit https://stgit.dcs.gla.ac.uk/software-engineering/starting-a-lab/-/wikis/home/Git/Commands/Git-commit-(direct)
+    * See git commit [https://github.com/uog-cose/socs-software-engineering-practices-starting-a-lab/wiki/Commit](https://github.com/uog-cose/socs-software-engineering-practices-starting-a-lab/wiki/Commit)
     * Log into your GitLab Account on the browser and go to your forked project
     * Check the project history and make sure the commit is present
 
