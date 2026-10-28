@@ -67,9 +67,8 @@ class RockPaperScissor {
         return getInteger(generateRequest(weapons));
     }
 
-    public String determineWinner(String[] weaponList, int userWeapon, int computerWeapon)
+    public String determineWinner(String[] weaponList, int userWeapon, int computerWeapon, String name)
     {
-        String name = DEFAULT_NAME;
         String winner;
         if (userWeapon == computerWeapon)
         {
@@ -99,14 +98,14 @@ class RockPaperScissor {
         return games;
     }
 
-    public void playGame(String[] weaponList){
+    public void playGame(String[] weaponList, String name){
         int userWeapon;
         int computerWeapon;
         String winner;
         userWeapon = requestPlay(weaponList);
         do{
             computerWeapon = getComputerChoice();
-            winner = determineWinner(weaponList, userWeapon, computerWeapon);
+            winner = determineWinner(weaponList, userWeapon, computerWeapon, name);
             display(winner);
             userWeapon = requestPlay(weaponList);
         } while (userWeapon< weaponList.length);
@@ -128,13 +127,14 @@ class RockPaperScissor {
 
     public void run(){
         Map<String, String> gamesConfiguration = getGamesConfiguration();
+        String name = getString(QUESTION_WHAT_IS_NAME);
         String[] games = getKeys(gamesConfiguration);
         String gamesRequest = generateRequest(games);
         int userGame = getInteger(gamesRequest);
         while (userGame < this.configuration.size())
         {
             String[] weaponlist = getWeapons(gamesConfiguration, userGame);
-            playGame(weaponlist);
+            playGame(weaponlist, name);
             userGame = getInteger(gamesRequest);
         } ;
     }
